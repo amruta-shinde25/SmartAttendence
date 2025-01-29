@@ -55,7 +55,8 @@ const routes: Routes = [
   {
     path:'view-attendance',
     component: ViewAttendanceComponent
-  }
+  },
+
 
 ];
 

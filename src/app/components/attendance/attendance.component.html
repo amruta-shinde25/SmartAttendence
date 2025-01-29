@@ -9,15 +9,15 @@
 
   <div class="row">
     <div class="col-md-3">
-      <!-- (change)="onSubjectChange($event)" -->
-      <select class="form-control center-text-select" [(ngModel)]="selectedSubject">
+      <!--  -->
+      <select class="form-control center-text-select"  (change)="onSubjectChange($event)">
           <option value=""> Select Subject</option>
         <option *ngFor="let subject of subjects" [value]="subject.id">{{ subject.name }}</option>
       </select>
     </div>
 
     <div class="col-md-3">
-      <select  class="form-control  center-text-select" [(ngModel)]="selectedFaculty">
+      <select  class="form-control  center-text-select"  (change)="onFacultyChange($event)">
         <option value="" > Select Faculty</option>
         <option *ngFor="let faculty of facultyUser" [value]="faculty.username">{{ faculty.username }}</option>
       </select>
@@ -88,7 +88,7 @@
               <input
                 type="checkbox"
                 [(ngModel)]="student.isSelected"
-                [value]="student.id"
+                value="student.id"
                 name="id"
               />
             </td>

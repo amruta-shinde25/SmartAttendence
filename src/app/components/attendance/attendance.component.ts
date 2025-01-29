@@ -57,16 +57,15 @@ export class AttendanceComponent {
 
   ngOnInit() {
     this.role = String(localStorage.getItem('role'));
-
     this.getAllStudents();
     this.getAllFaculty();
     this.getAllSubjects();
   }
 
-  // onSubjectChange(event: Event) {
-  //   const selectElement = event.target as HTMLSelectElement;
-  //   this.selectedSubject = Number(selectElement.value);
-  // }
+  onSubjectChange(event: Event) {
+    const selectElement = event.target as HTMLSelectElement;
+    this.selectedSubject = Number(selectElement.value);
+  }
 
   onFacultyChange(event: Event) {
     const selectElement = event.target as HTMLSelectElement;
@@ -98,7 +97,7 @@ export class AttendanceComponent {
       studentIds: this.selectedIds,
     };
 
-    console.log(attendanceRecord);
+
 
     this.attendanceService.submitAttendance(attendanceRecord).subscribe((response)=>{
       if(response!=null){

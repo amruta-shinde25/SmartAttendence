@@ -19,7 +19,14 @@
         <td class="text-center">{{ s.name }}</td>
         <td class="text-center">
           <a [routerLink]="['/get-subject-by-id', s.id]" class="btn btn-success"> Edit </a> &nbsp;
-          <a [routerLink]="['/delete-subject-by-id',s.id]" class="btn btn-danger"> Delete </a>
+
+
+
+            <button *ngIf="role==='admin'" (click)="deleteSubject(s.id)" class="btn btn-danger"> Delete </button>
+
+
+
+
         </td>
       </tr>
     </tbody>

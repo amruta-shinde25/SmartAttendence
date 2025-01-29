@@ -15,8 +15,22 @@ export class SubjectListComponent {
 
   ngOnInit() {
     this.role= String(localStorage.getItem('role'));
+   this.getAllSubject();
+  }
+
+  getAllSubject(){
     this.subjectService.getAllSubject().subscribe((response) => {
       this.subjects = response;
     });
+  }
+
+
+  deleteSubject(id:number){
+
+    this.subjectService.deleteSubject(id).subscribe(res =>{
+      alert(res);
+
+    })
+
   }
 }

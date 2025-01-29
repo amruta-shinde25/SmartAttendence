@@ -43,10 +43,6 @@ export class ViewAttendanceComponent {
   }
 
   searchAttendance() {
-console.log(this.selectedDate);
-console.log(this.selectedSubject);
-
-
 
     this.attendanceService
       .searchAttendanceByDate_Subject(this.selectedDate, this.selectedSubject)

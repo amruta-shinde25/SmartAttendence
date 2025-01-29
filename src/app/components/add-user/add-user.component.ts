@@ -37,11 +37,13 @@ export class AddUserComponent {
     console.log('before service ', this.user);
     this.adminService.addUser(this.user).subscribe((response) => {
       console.log('response from server', response);
-      if(response==1){
-        alert('User Added ');
+
+      if(response!='Registered'){
+        alert('User Already Exists');
       }else{
-        alert('User Already Exist with Username = '+this.user.username);
+        alert(response);
       }
+
       this.router.navigate(['/get-all-user']);
     });
   }

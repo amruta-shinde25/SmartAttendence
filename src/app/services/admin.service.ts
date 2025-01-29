@@ -37,7 +37,7 @@ export class AdminService {
     console.log('in service : ', user);
 
     const postUrl = 'http://localhost:8091/user/register-user';
-    return this.http.post<User>(postUrl, user).pipe(
+    return this.http.post<User>(postUrl, user,{responseType: 'text' as 'json'}).pipe(
       catchError(this.handleError)
     );
   }

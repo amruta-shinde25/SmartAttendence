@@ -30,4 +30,9 @@ export class SubjectService {
     return this.http.put(url, subject);
   }
 
+  deleteSubject(id:number):Observable<any>{
+    const url = `http://localhost:8091/subject/delete-subject/${id}`;
+    return this.http.delete(url,{responseType:'text' as 'json'});
+  }
+
 }
